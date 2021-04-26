@@ -1,0 +1,40 @@
+{
+  "name": "cordova-plugin-app-installer",
+  "version": "0.0.1",
+  "description": "Cordova App Installer Plugin.",
+  "main": "appInstaller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cboard-org/cordova-plugin-app-installer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cboard-org/cordova-plugin-app-installer/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-app-installer",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cboard",
+    "cordova",
+    "app",
+    "installer",
+    "aac",
+    "autism",
+    "cerebral-palsy",
+    "progressive-web-app",
+    "communication-board",
+    "speech",
+    "language",
+    "tts",
+    "text-to-speech"
+  ],
+  "author": "Martin Bedouret",
+  "license": "GPL-3.0-only",
+  "homepage": "https://github.com/cboard-org/cordova-plugin-app-installer#readme"
+}

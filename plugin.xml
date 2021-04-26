@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-app-installer"
+    version="1.1.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>Cboard App Installer</name>
+    <description>Cboard Cordova App Installer Plugin.</description>
+    <author>martinbedouret</author>
+  <license>GPL-3.0-only</license>
+  <keywords>cordova,cboard,installer,app</keywords>
+    <repo>https://github.com/cboard-org/cordova-plugin-app-installer.git</repo>
+    <issue>https://github.com/cboard-org/cordova-plugin-app-installer/issues</issue>
+
+    <engines>
+        <engine name="cordova-android" version=">5.0.0"/>
+    </engines>
+    <js-module name="appInstaller" src="www/appInstaller.js">
+        <clobbers target="window.appInstaller"/>
+    </js-module>
+    <platform name="android">
+        <preference name="ANDROID_SUPPORT_V4_VERSION" default="26.+" />
+        <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="appInstaller">
+                <param name="android-package" value="plugin.appInstaller.AppInstaller"/>
+            </feature>
+        </config-file>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <preference name="AndroidPersistentFileLocation" value="Internal" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <provider 
+                android:name="plugin.appInstaller.AppInstallerProvider"
+                android:authorities="${applicationId}.fileprovider" 
+                android:exported="false" 
+                android:grantUriPermissions="true">
+                <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
+            </provider>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+        </config-file>
+        <source-file src="src/android/AppInstaller.java" target-dir="src/plugin/appInstaller/"/>
+        <source-file src="src/android/AppInstallerProvider.java" target-dir="src/plugin/appInstaller/"/>
+        <source-file src="src/android/xml/file_paths.xml" target-dir="res/xml/"/>
+    </platform>
+</plugin>
