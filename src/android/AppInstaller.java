@@ -51,7 +51,7 @@ public class AppInstaller extends CordovaPlugin {
         intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
         //intent.data = contentUri;
         context.startActivity(intent);
-        context.unregisterReceiver(this);
+        //context.unregisterReceiver(this);
         // finish()
 
         callbackContext.success();
