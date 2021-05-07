@@ -47,7 +47,7 @@ public class AppInstaller extends CordovaPlugin {
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
         //intent.data = contentUri;
         context.startActivity(intent);
