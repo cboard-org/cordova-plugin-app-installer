@@ -16,7 +16,7 @@
         <engine name="cordova-android" version=">5.0.0"/>
     </engines>
     <js-module name="appInstaller" src="www/appInstaller.js">
-        <clobbers target="window.appInstaller"/>
+        <clobbers target="appInstaller"/>
     </js-module>
     <platform name="android">
         <preference name="ANDROID_SUPPORT_V4_VERSION" default="26.+" />
